@@ -97,8 +97,8 @@ function drawCharts(lat, lon){
   }
 
   // ipapi returns latitude / longitude property names: latitude, longitude (strings or numbers)
-  const lat = parseFloat(raw.latitude ?? raw.lat ?? raw.latitude && raw.latitude);
-  const lon = parseFloat(raw.longitude ?? raw.lon ?? raw.longitude && raw.longitude);
+  const lat = parseFloat(raw.latitude ?? raw.lat ?? raw.latitude ) && (raw.latitude);
+  const lon = parseFloat(raw.longitude ?? raw.lon ?? raw.longitude ) && (raw.longitude);
 
   updateInfoTable(raw);
 
