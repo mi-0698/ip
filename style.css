@@ -1,0 +1,39 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#60a5fa;
+  --text:#e6eef8;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#071028 0%, #071422 100%);
+  color:var(--text);
+  padding:20px;
+}
+header{max-width:1100px;margin:0 auto 18px}
+h1{margin:0 0 4px;font-size:1.3rem}
+.hint{margin:0;color:#98a7c6;font-size:0.9rem}
+
+main{max-width:1100px;margin:0 auto;background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,0.5)}
+
+section{margin-bottom:18px}
+#infoTable{width:100%;border-collapse:collapse}
+#infoTable th, #infoTable td{
+  text-align:left;padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03)
+}
+#map{height:380px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);margin-top:8px}
+
+/* charts */
+.chart-row{display:flex;gap:12px;flex-wrap:wrap}
+canvas{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:8px; border-radius:6px;}
+
+/* small screens */
+@media (max-width:800px){
+  .chart-row{flex-direction:column}
+  #map{height:300px}
+}
+.note{color:#98a7c6;font-size:0.85rem}
+footer{margin-top:16px;color:#7f95b3}

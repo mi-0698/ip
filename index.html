@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IP → 位置情報グラフデモ</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>あなたのIPから位置情報を取得して地図・グラフ表示</h1>
+    <p class="hint">※IPベースの測位は概算です。精度や利用制限はAPI提供元に依存します。</p>
+  </header>
+
+  <main>
+    <section id="info">
+      <h2>検出結果</h2>
+      <table id="infoTable">
+        <tbody>
+          <tr><th>IP</th><td id="ip">—</td></tr>
+          <tr><th>国</th><td id="country">—</td></tr>
+          <tr><th>地域</th><td id="region">—</td></tr>
+          <tr><th>市区町村</th><td id="city">—</td></tr>
+          <tr><th>緯度, 経度</th><td id="latlon">—</td></tr>
+          <tr><th>タイムゾーン</th><td id="timezone">—</td></tr>
+          <tr><th>ISP / Org</th><td id="org">—</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="mapSection">
+      <h2>地図</h2>
+      <div id="map"></div>
+    </section>
+
+    <section id="charts">
+      <h2>グラフ</h2>
+      <div class="chart-row">
+        <canvas id="latlonScatter" width="400" height="300"></canvas>
+        <canvas id="latlonBars" width="400" height="300"></canvas>
+      </div>
+      <p class="note">散布図は緯度（Y軸）・経度（X軸）をプロット。棒グラフは数値比較用です。</p>
+    </section>
+
+    <footer>
+      <small>デモ — IPジオロケーションAPI: ipapi.co</small>
+    </footer>
+  </main>
+
+  <!-- ライブラリ -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- アプリ本体 -->
+  <script src="script.js"></script>
+</body>
+</html>
